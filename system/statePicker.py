@@ -1,4 +1,4 @@
-from ...states.state import State
+from states.state import State
 from typing import List
 
 class StatePicker():
