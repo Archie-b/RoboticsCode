@@ -1,1 +1,5 @@
 *.cpython-310.pyc
+.env
+.mypy_cache
+out
+__pycache__

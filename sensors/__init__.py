@@ -1,3 +1,2 @@
 from .sensor import Sensor
-from .ICM26948 import ICM26948
-
+from .ICM20948 import ICM20948
