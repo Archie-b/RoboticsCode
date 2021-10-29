@@ -5,7 +5,7 @@ from typing import List
 from states.state import State
 from adafruit_blinka import board
 from busio import I2C
-from .system.management import Management
+from system.management import Management
 
 def main():
     i2c: I2C = board.I2C()

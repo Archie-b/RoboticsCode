@@ -1,7 +1,7 @@
 from system.vector import Vector
 from .sensor import Sensor
 from typing import Tuple
-from adafruit_icm20x import ICM20948
+from adafruit_icm20x import ICM20948 as icm20x
 from busio import I2C
 
 SensorData = Tuple[float, float, float]
@@ -10,11 +10,11 @@ SensorData = Tuple[float, float, float]
 class ICM20948(Sensor):
 
     i2c: I2C
-    icm: ICM20948
+    icm: icm20x
 
     def __init__(self, i2c) -> None:
         self.i2c = i2c
-        self.icm = ICM20948(i2c)
+        self.icm = icm20x(i2c)
 
     @staticmethod
     def getVectorFromSensorData(data: SensorData) -> Vector:
