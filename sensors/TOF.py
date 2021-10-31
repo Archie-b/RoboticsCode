@@ -35,11 +35,11 @@ class TOF(Sensor):
                     if(((TOF_data[j+12]) | (TOF_data[j+13] << 8)) == 0):
                         return TOFData()
                     else:
-                        self.TOF_system_time = TOF_data[j+4] | TOF_data[j +
+                        self.data.systemTime = TOF_data[j+4] | TOF_data[j +
                                                                         5] << 8 | TOF_data[j+6] << 16 | TOF_data[j+7] << 24
-                        self.TOF_distance = (
+                        self.data.distance = (
                             TOF_data[j+8]) | (TOF_data[j+9] << 8) | (TOF_data[j+10] << 16)
-                        self.TOF_status = TOF_data[j+11]
-                        self.TOF_signal = TOF_data[j+12] | TOF_data[j+13] << 8
+                        self.data.status = TOF_data[j+11]
+                        self.data.signal = TOF_data[j+12] | TOF_data[j+13] << 8
 
         return self.data
